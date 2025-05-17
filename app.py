@@ -210,4 +210,20 @@ with gr.Blocks(title="Emotion Detection in Social Media Conversations", theme=th
             show_label=False,
             elem_classes="output-box"
         )
-        file_button.click(fn=analyze_file,
+        file_button.click(fn=analyze_file, inputs=file_input, outputs=file_output)
+
+    # Footer
+    gr.Markdown(
+        """
+        ---
+        Built with ❤️ using Gradio and Hugging Face.  
+        Dataset: Social Media Sentiments Analysis Dataset  
+        Model: `j-hartmann/emotion-english-distilroberta-base`  
+        """
+    )
+
+# Launch the app (commented out for Hugging Face Spaces)
+# demo.launch()
+
+if __name__ == "__main__":
+    demo.launch()
